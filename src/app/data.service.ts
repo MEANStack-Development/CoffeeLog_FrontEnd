@@ -9,11 +9,14 @@ export class DataService {
 
   constructor() { }
 
-  getList(callback: Function) {
-    const list = [
-      new Coffee("Double Espresso", "Cafe Tortoni", new PlaceLocation("Av. de Mayo 600", "Buenos Aires")),
-      new Coffee("Honey Americano", "Starcoffee", new PlaceLocation("Gran Via 34", "Madrid"))
+  //Cofee item List
+  getList (callback: Function) {
+    const List = [
+      new Coffee("Double Expresso","Cafe Tortoni", new PlaceLocation("Av. de Mongo 600", "Madrid")),
+      new Coffee("Machiato","Cafe Helsinki", new PlaceLocation("Helsinkikatu 26 A", "Helsinki")),
     ];
-    callback(list);
+    callback(List);
   }
 }
+
+//Continue From 3.1

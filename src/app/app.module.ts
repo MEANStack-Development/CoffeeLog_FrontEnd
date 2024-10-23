@@ -15,19 +15,21 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { MatIconModule } from "@angular/material/icon";
-import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from "@angular/material/slider";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    CoffeeComponent,
-    
+    CoffeeComponent
   ],
   imports: [
+    HttpClientModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -39,8 +41,8 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatSliderModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

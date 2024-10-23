@@ -4,6 +4,7 @@ import { GeolocationService } from '../geolocation.service';
 import { TastingRating } from '../logic/TastingRating';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UiService } from '../ui.service';
 
 @Component({
   selector: 'app-coffee',
@@ -21,15 +22,19 @@ export class CoffeeComponent {
     private geolocation: GeolocationService,
     private data: DataService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private ui: UiService
   ) {}
 
   ngOnInit() {
+    this.ui.setThemeColor("brown");
+    this.ui.setTitle("New")
     this.route.params.subscribe(params => {
       if (params["id"]) {
         this.data.get(params["id"], (response: any) => {
           this.coffee = response; // TODO: convert the object to a Coffee instance
           this.formType = "editing";
+          this.ui.setTitle(this.coffee.name);
           if (this.coffee.tastingRating) {
             this.tastingEnabled = true
           }

@@ -3,6 +3,7 @@ import { Coffee } from '../logic/Coffee';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 import { GeolocationService } from '../geolocation.service';
+import { UiService } from '../ui.service';
 
 @Component({
   selector: 'app-list',
@@ -12,51 +13,43 @@ import { GeolocationService } from '../geolocation.service';
 export class ListComponent {
    list: Coffee[] = [];
 
-  constructor(
+   constructor(
     private data: DataService,
     private router: Router,
-    private geolocation: GeolocationService
-  ) {}
+    private geolocation: GeolocationService,
+    private ui: UiService
+   ) {}
 
-  //UpdateValue
    goDetails(coffee: Coffee) {
       this.router.navigate(["/coffee", coffee._id])
    }
 
-  //Function for Go to Map
-   goMap(coffee: Coffee){
-    const mapURL = this.geolocation.getMapLink(coffee.location!)
-    location.href = mapURL;
+   goMap(coffee: Coffee) {
+    const mapURL = this.geolocation.getMapLink(coffee.location!);
     window.open(mapURL, "_blank");
    }
 
-
-  //Function for Share
-  share(coffee: Coffee){
-    const text = `I had this coffee at ${coffee.place} and for me it's a ${coffee.rating} stars`;
-    //Let's check can we share the following info
+   share(coffee: Coffee) {
+    const text = `I had this coffee at ${coffee.place} and for me it's ${coffee.rating} stars.`
     const info = {
       title: coffee.name,
       text: text,
       url: window.location.href
     }
 
-    //Check that device/or OS has share dialog
-    if('share' in navigator && navigator.canShare()){
-        navigator.share(info)
-      }else{
-        // TODO Show somkind of message
-      }
-  }
-
-    
-
-
+    if ('share' in navigator && navigator.canShare(info)) {
+      navigator.share(info)
+    } else {
+      // TODO: show a message
+    }
+   }
 
    ngOnInit() {
     this.data.getList((list: Coffee[]) => {
       this.list = list;
-    })
+    });
+    this.ui.setTitle("Coffees");
+    this.ui.setThemeColor("orange");
    }
 
 }

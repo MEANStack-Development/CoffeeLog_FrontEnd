@@ -1,0 +1,52 @@
+{
+  "id": "/",
+  "name": "Coffee Log: the best app for coffee lovers",
+  "short_name": "Coffee Log",
+  "theme_color": "orange",
+  "background_color": "#fafafa",
+  "display": "minimal-ui",
+  "scope": "./",
+  "start_url": "./?utm_source=pwa",
+  "description": "This is the best app for keep track of the coffees that you consume and if you like them or not",
+  "screenshots": [
+    {
+      "src": "assets/screenshot.png",
+      "sizes": "1440x3120",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Coffee Review",
+      "short_name": "New Review",
+      "description": "Create a new review for a coffee",
+      "url": "/coffee",
+      "icons": [    
+        {
+          "src": "assets/icons/icon.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        },
+        {
+          "src": "assets/icons/maskable_icon.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "maskable"
+        }        
+      ]
+    }
+  ],
+  "icons": [    
+    {
+      "src": "assets/icons/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -20,9 +20,14 @@ export class ListComponent {
     private ui: UiService
    ) {}
 
-   goDetails(coffee: Coffee) {
+   goForUpdate(coffee: Coffee) {
       this.router.navigate(["/coffee", coffee._id])
    }
+
+   goForCoffeDetails(coffee: Coffee) {
+    this.router.navigate(["/coffeedetails", coffee._id])
+ }
+
 
    goMap(coffee: Coffee) {
     const mapURL = this.geolocation.getMapLink(coffee.location!);

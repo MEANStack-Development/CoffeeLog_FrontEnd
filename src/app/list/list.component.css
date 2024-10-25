@@ -9,3 +9,14 @@
         bottom: 50px;
     }
 }
+
+mat-card {
+    margin-top: 8px;
+    margin-right:5px;
+    margin-left:5px;
+    border: 1px solid lightgray;
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+

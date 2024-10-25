@@ -14,7 +14,16 @@ import { UiService } from '../ui.service';
 export class CoffeeComponent {
 
   coffee = new Coffee();
-  types = ["Espresso", "Ristretto", "Americano", "Cappuccino", "Frappe"]
+  types = 
+        [
+          "Americanos","Brewed Coffees","Black Teas",
+          "Cappuccinos","Cold Brews","Espressos",
+          "Frappes","Iced Shaken Espresso",
+          "Iced Lattes","Green Teas","Lattes",
+          "Macchiatos","Mochas","Protein and Milk",
+          "Ristrettos","Teas"
+        ]
+
   tastingEnabled = false;
   formType : "editing" | "inserting" = "inserting";
 
